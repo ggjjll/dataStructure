@@ -47,9 +47,7 @@ function eliminatesAndSort(array) {
 
   // 添加进数组
   function addIntoNewArray(num) {
-
     let length = newArray.length;
-
     if (length <= 0) {
       newArray[0] = num;
       return ;
@@ -70,7 +68,6 @@ function eliminatesAndSort(array) {
       if (num === newArray[i]) {
         return ;
       }
-
       if (i < length - 1 && num > newArray[i] && num < newArray[i + 1]) {
         // 插入其中
         for (let j = length; j > i + 1; j --) {
@@ -79,7 +76,6 @@ function eliminatesAndSort(array) {
         newArray[i + 1] = num;
         return ;
       }
-
     }
   }
 }
