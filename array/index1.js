@@ -1,4 +1,4 @@
-var data1 = require('./data1');
+let data1 = require('./data1');
 
 // 去掉重复元素
 function eliminatesDuplicate(array) {

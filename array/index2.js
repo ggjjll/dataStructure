@@ -1,4 +1,4 @@
-var data1 = require('./data1');
+let data1 = require('./data1');
 
 // 统计并排序
 function statisticsAndSort(array) {
@@ -73,7 +73,51 @@ function statisticsAndSort(array) {
     }
     return array;
   }
+
+
 }
+//function sortByMach(array) {
+//  // console.log(array);
+//  let length = array.length;
+//  if (length <= 1 || (length === 2 && array[0] === array[1])) {
+//    return array;
+//  }
+//  console.log(length);
+//  let left = [];
+//  let lengthLeft = 0;
+//  let right = [];
+//  let lengthRight = 0;
+//
+//  let index = parseInt(length / 2);
+//
+//  let indexNum = array[index];
+//  for (let i = 0; i < length; i ++) {
+//    if (array[i] <= indexNum) {
+//      left[lengthLeft ++] = array[i];
+//    } else {
+//      right[lengthRight ++] = array[i];
+//    }
+//  }
+//
+//  return connection(sortByMach(left), sortByMach(right));
+//
+//  function connection() {
+//    let argumentsLength = arguments.length;
+//    let newArray = [];
+//    let length = 0;
+//    for (let i = 0; i < argumentsLength; i ++) {
+//      let arr = arguments[i];
+//      if (!arr) {
+//        continue ;
+//      }
+//      let arrLength = arr.length;
+//      for (let j = 0; j < arrLength; j ++) {
+//        newArray[length ++] = arr[j];
+//      }
+//    }
+//    return newArray;
+//  }
+//}
 
 // 抽离num
 function getNumArr(array) {
@@ -103,6 +147,7 @@ function getMachMax(array) {
   let length = 0;
   let arr_length = array.length;
   for (let i = arr_length - 1; ; i--) {
+
     if (array[arr_length - 1].mach !== array[i].mach) {
       return newArray;
     }
@@ -111,10 +156,13 @@ function getMachMax(array) {
 }
 
 function main() {
+
   let newArray = statisticsAndSort(data1);
   console.log(getNumArr(newArray));
   console.log('出现次数最少', getMachMin(newArray));
   console.log('出现次数最多', getMachMax(newArray));
+
+  //console.log(sortByMach([9,5,2,5,3,2,3,7]));
 }
 
 main();
