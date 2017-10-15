@@ -75,49 +75,8 @@ function statisticsAndSort(array) {
   }
 
 
-}
-//function sortByMach(array) {
-//  // console.log(array);
-//  let length = array.length;
-//  if (length <= 1 || (length === 2 && array[0] === array[1])) {
-//    return array;
-//  }
-//  console.log(length);
-//  let left = [];
-//  let lengthLeft = 0;
-//  let right = [];
-//  let lengthRight = 0;
-//
-//  let index = parseInt(length / 2);
-//
-//  let indexNum = array[index];
-//  for (let i = 0; i < length; i ++) {
-//    if (array[i] <= indexNum) {
-//      left[lengthLeft ++] = array[i];
-//    } else {
-//      right[lengthRight ++] = array[i];
-//    }
-//  }
-//
-//  return connection(sortByMach(left), sortByMach(right));
-//
-//  function connection() {
-//    let argumentsLength = arguments.length;
-//    let newArray = [];
-//    let length = 0;
-//    for (let i = 0; i < argumentsLength; i ++) {
-//      let arr = arguments[i];
-//      if (!arr) {
-//        continue ;
-//      }
-//      let arrLength = arr.length;
-//      for (let j = 0; j < arrLength; j ++) {
-//        newArray[length ++] = arr[j];
-//      }
-//    }
-//    return newArray;
-//  }
-//}
+ }
+
 
 // 抽离num
 function getNumArr(array) {
@@ -167,3 +126,57 @@ function main() {
 
 main();
 
+
+
+
+
+
+
+
+function sortByMach(array) {
+  // console.log(array);
+  let length = array.length;
+  if (length <= 1 || (length === 2 && array[0] === array[1])) {
+    return connection(array);
+  }
+  // console.log(length);
+  let left = [];
+  let lengthLeft = 0;
+  let right = [];
+  let lengthRight = 0;
+
+  let index = parseInt(length / 2);
+  console.log(index, length);
+  let indexNum = array[index];
+  for (let i = 0; i < length; i ++) {
+    if (array[i] <= indexNum) {
+      left[lengthLeft ++] = array[i];
+    } else {
+      right[lengthRight++] = array[i];
+    }
+  }
+  console.log(left, right);
+
+  return connection(sortByMach(left), sortByMach(right));
+
+  function connection() {
+    let argumentsLength = arguments.length;
+    let newArray = [];
+    let length = 0;
+    for (let i = 0; i < argumentsLength; i ++) {
+      let arr = arguments[i];
+      if (!arr) {
+        continue ;
+      }
+      let arrLength = arr.length;
+      for (let j = 0; j < arrLength; j ++) {
+        newArray[length ++] = arr[j];
+      }
+    }
+    return newArray;
+  }
+}
+
+
+let a = sortByMach([1,2,5,9,9,5,3,6,7,2,3]);
+console.log(a);
