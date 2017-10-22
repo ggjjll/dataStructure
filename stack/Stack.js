@@ -28,6 +28,10 @@ class Stack {
     node.next = null;
     return node.value;
   }
+
+  getTop() {
+    return this.top.value;
+  }
 }
 
 module.exports =  Stack;

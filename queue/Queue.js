@@ -27,13 +27,6 @@ class Queue {
 
   // 出队
   pop() {
-    //let node = this.after.last;
-    //let last = node.last;
-    //node.last = null;
-    //node.next = null;
-    //this.after.last = last;
-    //last.next = this.after;
-    //return node.value;
     let node = this.front;
     this.front = node.next;
     node.last = null;
